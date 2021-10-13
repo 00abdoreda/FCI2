@@ -4,12 +4,16 @@
 <script>
 function setLink() {
   var t = document.getElementById("fname").value;
+
   var h = "https://www.appsheet.com/start/4f20a27e-02f6-4b66-bcfd-2df8cf668819#appName=%D8%AC%D8%AF%D9%88%D9%84%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%D8%A8%D8%AF%D9%88%D9%86%D8%B9%D9%86%D9%88%D8%A7%D9%86-4845339&group=%5B%5D&row="+t+"&search="+t+"&sort=%5B%5D&table=%D9%88%D8%B1%D9%82%D8%A92&userfilters=%5B%5D&view=%D9%88%D8%B1%D9%82%D8%A92_Detail";
   var link = document.getElementById("myLink");
-  link.href = h; //set link url
+  link.src = h; //set link url
 }
 
-
+window.addEventListener('contextmenu', function (e) { 
+  // do something here... 
+  e.preventDefault(); 
+}, false);
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -29,7 +33,13 @@ label {
   padding: 12px 12px 12px 0;
   display: inline-block;
 }
-
+#myLink {
+    border: none;
+    width: 100%;
+    height: calc(100% + 500px);
+    position: absolute;
+	pointer-events: none;
+}
 input[type=submit] {
   background-color: #04AA6D;
   color: white;
@@ -100,8 +110,9 @@ input[type=submit]:hover {
    
   </form>
   
+
 <div>
-  <a id="myLink" target="_blank" href="#">Get Your E-mail</a><!-- THIS MUST BE VALUE OF "Coordinate1" -->
+<iframe id="myLink"    title="Iframe Example"></iframe>
 </div>
 </div>
 
