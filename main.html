@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function setLink() {
+  var t = document.getElementById("fname").value;
+  var h = "https://www.appsheet.com/start/4f20a27e-02f6-4b66-bcfd-2df8cf668819#appName=%D8%AC%D8%AF%D9%88%D9%84%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%D8%A8%D8%AF%D9%88%D9%86%D8%B9%D9%86%D9%88%D8%A7%D9%86-4845339&group=%5B%5D&row="+t+"&search="+t+"&sort=%5B%5D&table=%D9%88%D8%B1%D9%82%D8%A92&userfilters=%5B%5D&view=%D9%88%D8%B1%D9%82%D8%A92_Detail";
+  var link = document.getElementById("myLink");
+  link.href = h; //set link url
+}
+
+
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>E-mail</h2>
+
+<div class="container">
+  <form action="/action_page.php">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Your National ID</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname" placeholder=" Your National ID.." oninput="setLink()">
+      </div>
+    </div>
+    
+    
+     
+    </div>
+    
+   
+  </form>
+  
+<div>
+  <a id="myLink" target="_blank" href="#">Get Your E-mail</a><!-- THIS MUST BE VALUE OF "Coordinate1" -->
+</div>
+</div>
+
+</body>
+</html>
